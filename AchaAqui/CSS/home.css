@@ -1,0 +1,122 @@
+body { 
+    height: 100vh;
+    background-image: url(../view/png/rio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font: normal 15pt Arial;
+}
+header {
+    background-color: transparent;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+}
+
+.logo img {
+    float: left;
+    width: 150px;
+    height: auto;
+}
+
+.topo {
+    float: right;
+    list-style-type: none;
+    margin-top: 30px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size: 18px;
+    display: inline-block;
+    display: flex;
+}
+
+.topo a {
+    color: rgb(12, 55, 7);
+    border: 1px solid transparent;
+    transition: ease;
+    padding: 5px 20px;
+    font: Arial;
+    text-decoration: none;
+    font-weight: bold;
+}
+.topo .foco{
+    background-color:rgb(43, 114, 37);
+    border-radius: 10px;
+    color: beige;
+}
+.topo a:hover {
+    background-color: rgb(119, 178, 118) ;
+    color: black;
+    border-radius: 10px;
+    transition: 1s;
+}
+section{
+    background-color: transparent;
+    border: 2xp solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin:200px auto;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+
+}
+h1{
+    color: rgb(51, 104, 45);
+    text-align: center;
+    line-height: 30px;
+}
+p{
+    color: rgb(51, 104, 45);
+    text-align: center;
+}
+footer {
+    background-color: beige;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+footer .text {
+    color: rgb(119, 178, 118);
+    text-align: left;
+    font-style: italic;
+    display: flex;
+}
+
+footer .text img {
+    float: left;
+    width: 250px;
+    height: auto;
+}
+
+footer .text ul {
+    width: 25%;
+    height: 30%;
+}
+
+footer h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+footer a {
+    color: rgb(119, 178, 118);
+    font-size: 17px;
+    font-weight: bold;
+}
+.Endereço{
+    background-color: white;
+    color: rgb(43, 114, 37);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0;
+    line-height: 22px;
+    border-radius: 40px;
+}
