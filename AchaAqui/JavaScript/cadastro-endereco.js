@@ -1,34 +1,47 @@
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 
-async function cadastrar() {
+async function Cadastrar() {
+    alert('carregando..')
     var titulo = document.getElementById('titulo').value;
     var cep = document.getElementById('cep').value;
-    var endereço = document.getElementById('endereço').value;
+    var endereco = document.getElementById('endereco').value;
     var numero = document.getElementById('numero').value;
     var complemento = document.getElementById('complemento').value;
 
 
-    const validarEndereço = (titulo != '' && cep != '' && endereço != '' &&
-        numero != '' && complemento != '');
+    const validarEndereco = (titulo != '' && cep != '' && endereco != '' &&
+        numero != '');
 
-    if (validarEndereço) {
-        /*let api = await fetch(url, {
+    if (validarEndereco) {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const token = user ? `Bearer ${user.token}` : '';
+
+        let api = await fetch(url, {
             method: "POST",
             body: JSON.stringify({
                 "title": titulo,
                 "cep": cep,
-                "address": endereço,
+                "address": endereco,
                 "number": numero,
                 "complement": complemento
 
             }),
             headers: {
-                'Content-Type': 'application/json'
-            }
-        });*/
-        alert('Endereço cadastrado com sucesso')
+                'Content-Type': 'application/json',
+                'Authorization': token
+            },
 
-
+        });
+        if (api.ok) {
+            const resposta = await api.json();
+            alert('Endereço cadastrado com sucesso!');
+            console.log(resposta);
+        }
+        let status = await api.json();
+        if(status){
+            alert(status)
+            console.log(status)
+        }
 
 
     } else {
