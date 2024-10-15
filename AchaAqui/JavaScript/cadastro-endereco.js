@@ -28,19 +28,20 @@ async function Cadastrar() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': 'bearer' + token
+
             },
 
         });
         if (api.ok) {
-            const resposta = await api.json();
-            alert('Endereço cadastrado com sucesso!');
-            console.log(resposta);
+            let resposta = await api.json();
+            console.log(resposta.data)
+            alert(`Endereço ${resposta.data.title} cadastrado com sucesso!`)
         }
-        let status = await api.json();
-        if(status){
-            alert(status)
-            console.log(status)
+        let respostaErro = await api.json();
+        if(respostaErro.status){
+            console.log(resposta.status)
+            alert(respostaErro.status)    
         }
 
 
