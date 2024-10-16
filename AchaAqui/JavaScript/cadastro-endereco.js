@@ -1,7 +1,6 @@
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 
 async function Cadastrar() {
-    alert('carregando..')
     var titulo = document.getElementById('titulo').value;
     var cep = document.getElementById('cep').value;
     var endereco = document.getElementById('endereco').value;
@@ -14,7 +13,7 @@ async function Cadastrar() {
 
     if (validarEndereco) {
         const user = JSON.parse(localStorage.getItem('user'));
-        const token = user ? `Bearer ${user.token}` : '';
+        const token = user.access_token;
 
         let api = await fetch(url, {
             method: "POST",
@@ -24,12 +23,10 @@ async function Cadastrar() {
                 "address": endereco,
                 "number": numero,
                 "complement": complemento
-
             }),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer' + token
-
             },
 
         });
@@ -43,8 +40,6 @@ async function Cadastrar() {
             console.log(resposta.status)
             alert(respostaErro.status)    
         }
-
-
     } else {
         alert('Preencha todos os campos!')
     }
