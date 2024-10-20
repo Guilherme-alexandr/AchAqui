@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>AchAqui Home</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/home.css'>
     <script src='/JavaScript/home.js'></script>
 </head>
+
 <body>
+    <!--   <script>
+        window.onload = function() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = '/view/login.html';
+            }
+        } DESCOMENTAR SOMENTE APÓS FINALIZADO!!!
+        </script> -->
     <header>
         <div class="logo">
             <img src="png/capivara.png">
         </div>
         <div class="topo">
-            <li><a href="/view/index.html" >Home</a></li>
-            <li><a href="/view/cadastro-endereco.html" >Cadastrar endereço</a></li>
-            <li><a href="/view/home.html" class=" foco" >Meus endereços</a></li>
+            <li><a href="/view/index.html">Home</a></li>
+            <li><a href="/view/cadastro-endereco.html">Cadastrar endereço</a></li>
+            <li><a href="/view/home.html" class=" foco">Meus endereços</a></li>
             <li><a href="/view/index.html">Sobre</a></li>
         </div>
     </header>
-   <section>
-    <input type="button" value="Mostrar meus endereços:" onclick="listarEnderecos()"><br><br>
+    <section>
+        <input type="button" value="Mostrar meus endereços:" onclick="listarEnderecos()"><br><br>
 
-    <ul id="lista-enderecos">  
+        <ul id="lista-enderecos">
 
-    </ul><br><br>
+        </ul><br><br>
 
-    <a href="/view/cadastro-endereco.html"><input type='button' value= 'Cadastrar novo endereço' class="Endereço"></a><br><br>
-    <a href="/view/index.html"><input type='button' value= 'Sair' class="Endereço"></a>
-   
+        <a href="/view/cadastro-endereco.html"><input type='button' value='Cadastrar novo endereço'
+                class="Endereço"></a><br><br>
+        <a href="#"><input type='button' value='Sair' class="Endereço" onclick="logout()"></a>
+
+        <div id="formulario-atualizacao" style="display: none; margin-top: 20px;"> </div>
     </section>
     <footer>
         <div class=text>
@@ -70,6 +82,7 @@
             </ul>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
