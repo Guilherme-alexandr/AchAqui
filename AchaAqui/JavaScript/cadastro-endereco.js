@@ -34,6 +34,8 @@ async function Cadastrar() {
             let resposta = await api.json();
             console.log(resposta.data)
             alert(`Endereço ${resposta.data.title} cadastrado com sucesso!`)
+            location.href = "http://127.0.0.1:5500/view/home.html"
+            return;
         }
         let respostaErro = await api.json();
         if(respostaErro.status){

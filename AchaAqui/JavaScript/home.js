@@ -39,9 +39,9 @@ function exibirEnderecos(enderecos) {
     enderecos.forEach(endereco => {
         const li = document.createElement('li');
         li.innerHTML = `
-            ${endereco.title}: ${endereco.formatted_address} (CEP: ${endereco.cep})
-            <button onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}', '${endereco.formatted_address}', '${endereco.cep}')">Atualizar</button>
-            <button onclick="deletarEndereco('${endereco.id}', '${endereco.title}')">Deletar</button>
+            ${endereco.title}: ${endereco.formatted_address} (CEP: ${endereco.cep})<br><br>
+            <button class="Add" onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}', '${endereco.formatted_address}', '${endereco.cep}')">Atualizar</button>
+            <button class="Add" onclick="deletarEndereco('${endereco.id}', '${endereco.title}')">Deletar</button><br><br>
         `;
         lista.appendChild(li);
     });

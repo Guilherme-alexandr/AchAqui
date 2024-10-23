@@ -1,9 +1,9 @@
 body { 
     height: 100vh;
-    background-image: url(../view/png/rio.jpg);
+    background-image: url(../view/png/paulista.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     font: normal 15pt Arial;
 }
 header {
@@ -52,15 +52,17 @@ header {
     transition: 1s;
 }
 section{
-    background-color: transparent;
+    background-color: beige;
     border: 2xp solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
+    width: 600px;
+    height: 700px;
     margin:200px auto;
     box-shadow: 5px 5px 10px black;
     text-align: center;
+    margin-top: 5%;
 
 }
 h1{
@@ -108,15 +110,53 @@ footer a {
     font-size: 17px;
     font-weight: bold;
 }
+.lista{
+    color: rgb(12, 55, 7);
+    font: 12px Arial;
+    border-radius: 10px;
+    font-weight: bold;
+}
 .Endereço{
     background-color: white;
     color: rgb(43, 114, 37);
     font-size: 15px;
     font-weight: 600;
-    border: none;
+    border-color: rgb(43, 114, 37);
     transition: all linear 160ms;
     cursor: pointer;
-    margin: 0;
+    margin: 0 200px;
+    margin-top: 0;
     line-height: 22px;
     border-radius: 40px;
+    padding: 10px 15px;
+}
+.Endereço:hover{
+    background-color: rgb(43, 114, 37);
+    color: beige;
+    border-color: black;
+}
+.Mostrar{
+    background-color: white;
+    color: rgb(43, 114, 37);
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid rgb(43, 114, 37);
+    cursor: pointer;
+    margin: 0 200px;
+    border-radius: 40px;
+    margin-top: 0%;
+}
+.Mostrar:hover{
+    background-color: rgb(43, 114, 37);
+    color: beige;
+    border-color: black;
+}
+.Add{
+    color: rgb(43, 114, 37);
+    font-size: 10px;
+    font-weight: 600;
+    border: 2px solid rgb(43, 114, 37);
+    margin-top: 0%;
+    cursor: pointer;
+    font-weight: bold;
 }
