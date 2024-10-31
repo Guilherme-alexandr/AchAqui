@@ -27,7 +27,7 @@ async function login() {
             localStorage.setItem('user', JSON.stringify(resposta))
             console.log(resposta)
             alert('redirecionando...')
-            location.href = "http://127.0.0.1:5500/view/home.html"
+            location.href = "http://127.0.0.1:5501/view/home.html"
             return;
         }
         let respostaErro = await api.json();
