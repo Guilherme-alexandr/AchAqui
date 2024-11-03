@@ -1,5 +1,8 @@
+
 body { 
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-image: url(../view/png/paulista.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,16 +56,18 @@ header {
 }
 section{
     background-color: beige;
-    border: 2xp solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     border-radius: 10px;
-    padding: 15px;
-    width: 600px;
-    height: 700px;
-    margin:200px auto;
+    width: 750px;
+    height: 950px;
+    margin: 20px auto;
     box-shadow: 5px 5px 10px black;
     text-align: center;
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
 
 }
 h1{
@@ -77,8 +82,9 @@ p{
 footer {
     background-color: beige;
     width: 100%;
-    height: 250px;
+    height: 200px;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
 footer .text {
@@ -101,8 +107,8 @@ footer .text ul {
 
 footer h4 {
     font-size: 20px;
-    margin-bottom: 16px;
-    font-weight: 600;
+    margin-bottom: 10px;
+    font-weight: 300;
 }
 
 footer a {
@@ -114,7 +120,15 @@ footer a {
     color: rgb(12, 55, 7);
     font: 12px Arial;
     border-radius: 10px;
-    font-weight: bold;
+    line-height: 22px;
+    margin-top: 0;
+    cursor: pointer;
+    border-color: rgb(43, 114, 37);
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 10px;
+
 }
 .Endereço{
     background-color: white;
@@ -142,14 +156,37 @@ footer a {
     font-weight: 600;
     border: 2px solid rgb(43, 114, 37);
     cursor: pointer;
-    margin: 0 200px;
-    border-radius: 40px;
-    margin-top: 0%;
+    margin: 10px auto; 
+    border-radius: 20px;
+    padding: 12px 24px;
+    transition: background-color 0.3s, color 0.3s;
 }
 .Mostrar:hover{
     background-color: rgb(43, 114, 37);
     color: beige;
     border-color: black;
+}
+#lista-enderecos {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+#lista-enderecos li {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(12, 55, 7);
+    border: 1px solid rgba(43, 114, 37, 0.5);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+#lista-enderecos li:hover {
+    transform: scale(1.02);
 }
 .Add{
     color: rgb(43, 114, 37);
@@ -159,4 +196,43 @@ footer a {
     margin-top: 0%;
     cursor: pointer;
     font-weight: bold;
+}
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto; 
+}
+
+.form-input {
+    width: 90%; 
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(43, 114, 37);
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.form-button {
+    background-color: rgb(43, 114, 37);
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.form-button:hover {
+    background-color: rgb(51, 139, 51);
 }

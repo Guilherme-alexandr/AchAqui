@@ -1,3 +1,4 @@
+
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 const user = JSON.parse(localStorage.getItem('user'));
 const token = user.access_token;
@@ -49,15 +50,19 @@ function exibirEnderecos(enderecos) {
 
 function mostrarFormularioAtualizacao(id, title, cep, endereco, numero, complemento) {
     const form = `
-           <h3>Atualizar Endereço</h3>
-        <input type="text" id="title-${id}" value="${title}" placeholder="Título">
-        <input type="text" id="cep-${id}" value="${cep}" placeholder="CEP">
-        <input type="text" id="endereco-${id}" value="${endereco}" placeholder="Endereço">
-        <input type="text" id="numero-${id}" value="${numero}" placeholder="Número">
-        <input type="text" id="complemento-${id}" value="${complemento}" placeholder="Complemento">
-        <button onclick="atualizarEndereco('${id}')">Salvar</button>
-        <button onclick="fecharFormulario()">Cancelar</button>
-        `;
+        <div class="form-container">
+            <h3>Atualizar Endereço</h3>
+            <input type="text" id="title-${id}" value="${title}" placeholder="Título" class="form-input">
+            <input type="text" id="cep-${id}" value="${cep}" placeholder="CEP" class="form-input">
+            <input type="text" id="endereco-${id}" value="${endereco}" placeholder="Endereço" class="form-input">
+            <input type="text" id="numero-${id}" value="${numero}" placeholder="Número" class="form-input">
+            <input type="text" id="complemento-${id}" value="${complemento}" placeholder="Complemento" class="form-input">
+            <div class="form-buttons">
+                <button onclick="atualizarEndereco('${id}')" class="form-button">Salvar</button>
+                <button onclick="fecharFormulario()" class="form-button">Cancelar</button>
+            </div>
+        </div>
+    `;
     const divFormulario = document.getElementById('formulario-atualizacao');
     divFormulario.innerHTML = form;
     divFormulario.style.display = 'block';
@@ -79,14 +84,14 @@ async function atualizarEndereco(id) {
     const data = {
         id: id,
         title: title,
-        cep: cep,
         address: endereco,
+        cep: cep,
         number: numero,
-        complemento: complemento
+        complement: complemento
 
     };
     try {
-        let api = await fetch(url, {
+        let api = await fetch(`${url}/${id}`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -138,3 +143,6 @@ function logout() {
     localStorage.removeItem('user');
     window.location.href = "/view/index.html";
 }
+window.onload = function() {
+    listarEnderecos(); 
+};
