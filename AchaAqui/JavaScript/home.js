@@ -41,7 +41,7 @@ function exibirEnderecos(enderecos) {
         const li = document.createElement('li');
         li.innerHTML = `
             ${endereco.title}: ${endereco.formatted_address} (CEP: ${endereco.cep})<br><br>
-            <button class="Add" onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}', '${endereco.formatted_address}', '${endereco.cep}')">Atualizar</button>
+            <button class="Add" onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}','${endereco.cep}', '${endereco.formatted_address}', '${endereco.number}', '${endereco.complement}' )">Atualizar</button>
             <button class="Add" onclick="deletarEndereco('${endereco.id}', '${endereco.title}')">Deletar</button><br><br>
         `;
         lista.appendChild(li);
@@ -84,8 +84,8 @@ async function atualizarEndereco(id) {
     const data = {
         id: id,
         title: title,
-        address: endereco,
         cep: cep,
+        address: endereco,
         number: numero,
         complement: complemento
 
