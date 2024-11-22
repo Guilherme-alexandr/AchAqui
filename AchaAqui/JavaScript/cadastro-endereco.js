@@ -1,5 +1,19 @@
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 
+window.onload = function() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    
+    if (!user || !user.access_token) {
+        alert('Usuario não autorizado. Você será redirecionado para o login.');
+        setTimeout(() => {
+            window.location.href = '/view/login.html';
+        }, 500);
+    } else {
+        const token = user.access_token;
+        console.log("Token:", token);
+    }
+}
+
 async function Cadastrar() {
     var titulo = document.getElementById('titulo').value;
     var cep = document.getElementById('cep').value;
@@ -47,3 +61,7 @@ async function Cadastrar() {
     }
 }
 
+function logout() {
+    localStorage.removeItem('user');
+    window.location.href = "/view/index.html";
+}

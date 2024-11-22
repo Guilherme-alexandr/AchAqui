@@ -1,9 +1,22 @@
 
 const url = "https://go-wash-api.onrender.com/api/auth/address"
-const user = JSON.parse(localStorage.getItem('user'));
-const token = user.access_token;
 
-async function listarEnderecos() {
+window.onload = function() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    
+    if (!user || !user.access_token) {
+        alert('Usuario não autorizado. Você será redirecionado para o login.');
+        setTimeout(() => {
+            window.location.href = '/view/login.html';
+        }, 500);
+    } else {
+        const token = user.access_token;
+        console.log("Token:", token);
+        listarEnderecos(token);
+    }
+}
+
+async function listarEnderecos(token) {
     try {
         let api = await fetch(url, {
             method: "GET",
@@ -41,7 +54,7 @@ function exibirEnderecos(enderecos) {
         const li = document.createElement('li');
         li.innerHTML = `
             ${endereco.title}: ${endereco.formatted_address} (CEP: ${endereco.cep})<br><br>
-            <button class="Add" onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}', '${endereco.formatted_address}', '${endereco.cep}')">Atualizar</button>
+            <button class="Add" onclick="mostrarFormularioAtualizacao('${endereco.id}', '${endereco.title}','${endereco.cep}', '${endereco.formatted_address}', '${endereco.number}', '${endereco.complement}' )">Atualizar</button>
             <button class="Add" onclick="deletarEndereco('${endereco.id}', '${endereco.title}')">Deletar</button><br><br>
         `;
         lista.appendChild(li);
@@ -84,8 +97,8 @@ async function atualizarEndereco(id) {
     const data = {
         id: id,
         title: title,
-        address: endereco,
         cep: cep,
+        address: endereco,
         number: numero,
         complement: complemento
 
@@ -143,6 +156,4 @@ function logout() {
     localStorage.removeItem('user');
     window.location.href = "/view/index.html";
 }
-window.onload = function() {
-    listarEnderecos(); 
-};
+
