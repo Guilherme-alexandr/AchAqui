@@ -98,9 +98,7 @@ section {
 .input-group {
     display: flex;
     flex-wrap: wrap;
-    /*alinhar as colunas*/
     justify-content: space-between;
-    /*separar blocos*/
     padding: 1rem 0;
 }
 .input-box {
@@ -110,7 +108,6 @@ section {
 }
 
 .input-box input {
-    /*formato dos blocos*/
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;

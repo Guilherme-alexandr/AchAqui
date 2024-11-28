@@ -2,6 +2,7 @@
 const key = "72beb701ed13421eb3a125202242811"
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 
+
 window.onload = function() {
     const user = JSON.parse(localStorage.getItem('user'));
     
@@ -158,19 +159,392 @@ function logout() {
     window.location.href = "/view/index.html";
 }
 
-async function fetchWeather(location) {
+async function clima(location) {
     const previsao = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}&aqi=no`;
-  
+
     try {
-      const response = await fetch(previsao);
-      if (!response.ok) {
-        throw new Error('Erro ao buscar dados.');
-      }
-      const data = await response.json();
-      displayWeather(data);
+        const response = await fetch(previsao);
+        if (!response.ok) {
+            throw new Error('Erro ao buscar dados.');
+        } else {
+            let resposta = await response.json();
+            console.log(resposta); 
+
+            if (resposta && resposta.current && resposta.location) {
+                const temp = resposta.current.temp_c; 
+                const estado = resposta.location.region;
+                const condicao = resposta.current.condition.text; 
+                const icone = resposta.current.condition.icon;
+                mostrarclima(estado, temp, condicao, icone);
+            } else {
+                throw new Error('Dados incompletos na resposta da API.');
+            }
+        }
     } catch (error) {
-      document.getElementById('weather').innerText = `Erro: ${error.message}`;
+        console.error('Erro na requisição:', error);
     }
-  }
-  
-  fetchWeather('São Paulo');
+}
+
+function mostrarclima(estado, temp, condicao, icone) {
+
+    console.log('Mostrando clima:', estado, temp, condicao, icone);
+
+    const climaHTML = `
+        <div class="clima" id="clima">
+            <div class="grau">
+                <h4 id="graus">${temp}°C</h4>
+            </div> 
+            <div>
+                <img src="https:${icone}" alt="${condicao}"/> 
+            </div>
+            
+            <div id="estado">${estado}</div>
+        </div>
+    `;
+
+    const divClima = document.getElementById('clima');
+    if (divClima) {
+        divClima.innerHTML = climaHTML;
+    } else {
+        console.error('Não encontrado.');
+    }
+}
+
+clima('São Paulo');
+
+mostrarclima()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

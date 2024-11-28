@@ -26,7 +26,7 @@ header {
 .topo {
     float: right;
     list-style-type: none;
-    margin-top: 30px;
+    margin-top: 0px;
     min-height: 400px;
     margin-right: 60px;
     font-size: 18px;
@@ -235,4 +235,11 @@ footer a {
 
 .form-button:hover {
     background-color: rgb(51, 139, 51);
+}
+
+.clima{
+    width: 50%;
+    height: 150px;
+    align-items: center;
+    display: flex;
 }
