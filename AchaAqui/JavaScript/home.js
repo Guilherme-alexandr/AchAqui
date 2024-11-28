@@ -1,4 +1,5 @@
 
+const key = "72beb701ed13421eb3a125202242811"
 const url = "https://go-wash-api.onrender.com/api/auth/address"
 
 window.onload = function() {
@@ -157,3 +158,19 @@ function logout() {
     window.location.href = "/view/index.html";
 }
 
+async function fetchWeather(location) {
+    const previsao = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}&aqi=no`;
+  
+    try {
+      const response = await fetch(previsao);
+      if (!response.ok) {
+        throw new Error('Erro ao buscar dados.');
+      }
+      const data = await response.json();
+      displayWeather(data);
+    } catch (error) {
+      document.getElementById('weather').innerText = `Erro: ${error.message}`;
+    }
+  }
+  
+  fetchWeather('São Paulo');
