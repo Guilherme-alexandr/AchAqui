@@ -1,0 +1,155 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../view/png/azulmar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    background-color: beige;
+    border: 2xp solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 15px;
+    width: 750px;
+    height: 600px;
+    margin: 200px auto;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+}
+
+header {
+    background-color: transparent;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+}
+
+.logo img {
+    float: left;
+    width: 150px;
+    height: auto;
+}
+
+.topo {
+    float: right;
+    list-style-type: none;
+    margin-top: 30px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size: 18px;
+    display: inline-block;
+    display: flex;
+}
+
+.topo a {
+    color: rgb(12, 55, 7);
+    border: 1px solid transparent;
+    transition: ease;
+    padding: 5px 20px;
+    font: Arial;
+    text-decoration: none;
+}
+.topo .foco{
+    background-color: rgb(43, 114, 37);
+    border-radius: 10px;
+}
+.topo a:hover {
+    background-color: rgb(108, 179, 105);
+    color: black;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.mundo img {
+    float: right;
+    width: 150px;
+    height: auto;
+    margin-top: 500px;
+}
+
+h1 {
+    font-weight: bold;
+    position: absolute;
+    left: 26%;
+    transform: translate(-50%, -50);
+    color: rgb(12, 55, 7);
+    font-size: 85px;
+    background-color: transparent;
+    border-radius: 40px;
+    font-family: 'Roboto';
+}
+
+h4 {
+    color: rgb(12, 55, 7);
+    font: normal 20pt Arial;
+    font-weight: bold;
+
+
+}
+
+p {
+    color: rgb(113, 177, 112);
+    font: normal 14pt Arial;
+    font-weight: bold;
+}
+
+li {
+    color: rgb(113, 177, 112);
+    font: normal 14pt Arial;
+    font-weight: bold;
+}
+
+footer {
+    background-color: beige;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+footer .text {
+    color: rgb(119, 178, 118);
+    text-align: left;
+    font-style: italic;
+    display: flex;
+}
+
+footer .text img {
+    float: left;
+    width: 250px;
+    height: auto;
+}
+
+footer .text ul {
+    width: 25%;
+    height: 30%;
+}
+
+footer h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+footer a {
+    color: rgb(119, 178, 118);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.Link {
+    background-color: white;
+    color: rgb(43, 114, 37);
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0;
+    line-height: 35px;
+    border-radius: 40px;
+    width: 50%;
+    border: rgb(43, 114, 37);
+}
