@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AchAqui Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/login.css'>
+    <script src='../JavaScript/login.js'></script>
+</head>
+
+<body>
+    <a href="/view/login.html" id="refress" type="button" onclick="refress()"></a>
+    <header>
+        <div class="logo">
+            <img src="png/capivara.png">
+        </div>
+        <div class="topo">
+            <li><a href="/view/index.html">Home</a></li>
+            <li><a href="/view/login.html" class="foco">Login</a></li>
+            <li><a href="/view/cadastro-usuario.html">Cadastro</a></li>
+        </div>
+    </header>
+    <section>
+        <div class="form">
+            <form>
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Bem vindo de volta!</h1>
+                        <p>Digite seus dados para acessar sua conta:</p>
+                    </div>
+                    <div class="input-group">
+                        <div class='list-social'>
+                            <img src="png/google.png" id="google" height="30px">
+                            <img src="png/apple.png" height="30px">
+                            <img src="png/face.png" height="35px"><br><br>
+                        </div>
+                        <div class=" Blocos">
+                            <input placeholder="Email" type="email" id="email" class="Blocos"><br>
+                            <input placeholder="Senha" type="password" id="senha" class="Blocos" maxlength="8">
+                        </div><br><br><br><br>
+                        <div>
+                            <input id="logar" type="button" class="Entrar" value="Login" onclick="login()"> <br><br>
+                            <button id="esqueci" onclick="esqueceu()">Esqueci minha senha</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="text">
+            <ul>
+                <h4>Contato:</h4>
+                <li>
+                    <p> Email: achaqui@gmail.com </p>
+                </li>
+                <li>
+                    <p> Telefone: +0800 726 4383 </p>
+                </li>
+                <li>
+                    <p> Whatsapp: (11) 97483946 </p>
+                </li>
+            </ul>
+            <ul>
+                <h4>Link</h4>
+                <li><a href="/view/index.html">Home</a></li>
+                <li><a href="/view/login.html">Login</a></li>
+                <li><a href="/view/cadastro-usuario.html">Cadastro</a></li>
+                <li><a href="/view/home.html">Meus Endereços</a></li>
+                <li><a href="/view/index.html">Sobre</a></li>
+            </ul>
+            <ul>
+                <h4>Suporte</h4>
+                <li>
+                    <p> FAQ </p>
+                </li>
+                <li>
+                    <p> Contato </p>
+                </li>
+                <li>
+                    <p> Como Funciona </p>
+                </li>
+            </ul>
+            <ul>
+                <div class="logo">
+                    <img src="png/capivara.png">
+                </div>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
